@@ -5,4 +5,4 @@ WORKDIR /app
 COPY . .
 RUN pip install -r requirements.txt
 
-CMD ["python3", "Job.py"]
+CMD ["python3", "lambda_function.py"]

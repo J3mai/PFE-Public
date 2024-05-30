@@ -2,9 +2,6 @@ streamlit
 pyspark
 boto3
 pandas
-selenium
-bs4
-lxml
 scikit-learn
 joblib
 catboost
