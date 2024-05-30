@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import warnings
-from sklearn.ensemble import RandomForestRegressor
 import joblib
 
 warnings.filterwarnings("ignore")
