@@ -1,0 +1,30 @@
+[*] install tools :
+
+[*] Java                
+[*] Hadoop              
+[*] Spark               
+[*] Kafka               
+[*] Microsoft SQl Server
+
+[] Coding:
+    [*] scrap data
+    [] integrate a kafka producer to automatically stream the scraped data to kafka consumer (HDFS)
+    [] create a spark script to treat data scrapped
+    [] integrate spark with Microsoft SQl Server as data warehouse
+    [] intégrate QlikSense with Microsoft SQl Server
+    [] transform data for the model to Graph data
+    [] create the model
+    [] integrate al the tools with each others
+
+
+
+AWS
+
+/scrapping with lambda 
+|__ save file to S3 (raw_data)
+
+/Data transformation
+|__ import data from S3
+    |__ Transform Data
+        |__ save the output data
+
