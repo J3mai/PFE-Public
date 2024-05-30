@@ -151,7 +151,7 @@ def crawl(links):
             continue
         finally:
             button_exists = True
-            while button_exists and x < 5:
+            while button_exists and x < 3:
                 print(f"page {x} at {datetime.now()}")
                 x += 1
                 time.sleep(2)
