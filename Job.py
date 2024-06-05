@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 from typing import Any
 
 from pyspark.sql import DataFrame
@@ -42,6 +43,7 @@ class ActifsJob:
         )
         print("Added data count \t",dataset_actifs.count())
         self._write_dataset_actifs_to_s3(dataset_actifs,self.bucket_name ,self.actifs_output_path)
+        time.sleep(100)
 
     def _transform_data(self) -> DataFrame:
         rental_data_df: DataFrame = self._get_data_from_rental_data(

@@ -14,7 +14,7 @@ import io
 
 ## Configuration ##
 ###################
-
+print("Got env variables : ",os.environ["aws_access_key_id"])
 #Selenium driver settings
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -151,7 +151,7 @@ def crawl(links):
             continue
         finally:
             button_exists = True
-            while button_exists and x < 3:
+            while button_exists and x < 5:
                 print(f"page {x} at {datetime.now()}")
                 x += 1
                 time.sleep(2)
@@ -162,7 +162,7 @@ def crawl(links):
                 div = soup.find("div", attrs={"class": "css-9ulpxd"})
                 if div:
                     offers = div.find_all("a", attrs={"class": "DetailPageLink"})
-                    if len(offers) > 0 :#and 10 < x <= 15
+                    if len(offers) > 0:# and 1 < x <= 4:
                         for offer in offers:
                             links.append(offer.get("href"))
                 pagination = soup.find("div", attrs={"class": "css-jsvuql"})
@@ -230,16 +230,6 @@ def get_data(links):
     except Exception as e:
         print(e)
     finally:
-        # data = []
-        # for i in range (len(Monthly_rent)):
-        #     data.append({
-        #     "Monthly rent": Monthly_rent[i],
-        #     "Beds": Beds[i],
-        #     "Baths": Baths[i],
-        #     "Surface": Surface[i],
-        #     "address": addresses[i],
-        #     "Posted": Posted[i],
-        # })
 
         data = pd.DataFrame(
             {

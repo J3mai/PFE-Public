@@ -107,6 +107,7 @@ def write_to_parquet(df: DataFrame, bucket_name: str , file_key : str) -> str:
         df = pd.concat([existing_data, df], ignore_index=True)
         df = df.dropna()
         df = df.drop_duplicates()
+        
     except :
         pass
 
